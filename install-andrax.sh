@@ -63,14 +63,15 @@ check_deps() {
         fi
     fi
 
-    if ! command -v wget &> /dev/null; then
-        echo -e "${YELLOW}[!] 'wget' not found, installing...${NC}"
-        pkg install wget -y
-        if ! command -v wget &> /dev/null; then
-            echo -e "${RED}[!] Failed to install 'wget'. Check your connection.${NC}"
+
+    if ! command -v curl &> /dev/null; then
+        echo -e "${YELLOW}[!] 'curl' not found, installing...${NC}"
+        pkg install curl -y
+        if ! command -v curl &> /dev/null; then
+            echo -e "${RED}[!] Failed to install 'curl'. Check your connection.${NC}"
             missing_deps=1
         else
-            echo -e "${GREEN}[+] 'wget' installed successfully.${NC}"
+            echo -e "${GREEN}[+] 'curl' installed successfully.${NC}"
         fi
     fi
     
@@ -79,7 +80,7 @@ check_deps() {
         exit 1
     fi
     
-    echo -e "${GREEN}[+] All dependencies (proot, wget) OK.${NC}"
+    echo -e "${GREEN}[+] All dependencies (proot, curl) OK.${NC}"
     sleep 1
 }
 
@@ -136,7 +137,7 @@ EOM
     chmod +x "$bin"
 
     echo -e "${BLUE}[*] fixing shebang of andrax.sh${NC}" 
-    termux-fix-shebang "$folder/usr/bin/*" > /dev/null 2Now 2>&1 &
+    termux-fix-shebang "$folder/usr/bin/*" > /dev/null 2>&1 &
     spinner $! "Running termux-fix-shebang..."
 
     echo ""
@@ -149,7 +150,7 @@ EOM
 do_download() {
     echo -e "${BLUE}[*] Starting download from:${NC} ${CYAN}$DOWNLOAD_URL${NC}"
     
-    wget -O "$tarball" "$DOWNLOAD_URL"
+    curl -L "$DOWNLOAD_URL" -o "$tarball"
     
     if [ $? -ne 0 ]; then
         echo -e "${RED}[!] Download FAILED!${NC}"
