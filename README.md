@@ -1,51 +1,55 @@
 # 📘 INSTALLER ANDRAX ON TERMUX WITHOUT ROOT
 
-## 🔗 Link Download ANDRAX Core
+## 🔗 Download ANDRAX Core
 [Download ANDRAX Core](https://drive.google.com/file/d/1RqW5LN2qev5euVSOczMbICV28F-Y_Mb8/view?usp=drivesdk)
 
 ---
 
-## ⚙️ Cara Install ANDRAX di Termux
+![screenshot](https://raw.githubusercontent.com/Kirozaku/Andrax-Termux/main/1.jpg)
 
-1. **Instal dependensi dasar**
+## ⚙️ How to Install ANDRAX on Termux
+
+1. **Install required dependencies**
    ```bash
    pkg install curl
    ```
 
-2. **Unduh script instalasi**
+2. **Download the installation script**
    ```bash
    curl https://raw.githubusercontent.com/Kirozaku/Andrax-Termux/refs/heads/main/install-andrax.sh -o install-andrax.sh
    ```
 
-3. **Jalankan installer**
+3. **Run the installer**
    ```bash
    bash install-andrax.sh
    ```
 
 ---
 
-## 🧩 Opsi Instalasi
-- **Opsi 1:**  
-  Jika Anda **sudah memiliki file `andrax.r5-build5.tar.xz`** di direktori yang sama dengan `install-andrax.sh`, jalankan langsung script tersebut.
-  
-- **Opsi 2:**  
-  Jika **belum memiliki file `andrax.r5-build5.tar.xz`**, installer akan **mengunduh dan menginstal secara otomatis**.  
+## 🧩 Installation Options
+- **Option 1:**  
+  If you already have the file `andrax.r5-build5.tar.xz` in the same directory as `install-andrax.sh`, simply run the script directly.
+
+- **Option 2:**  
+  If you do not have the file `andrax.r5-build5.tar.xz`, the installer will automatically download and install it for you.
 
 ---
 
-## 🚀 Menjalankan ANDRAX
-Setelah proses instalasi selesai, jalankan perintah berikut:
+## 🚀 Launching ANDRAX
+Once installation is complete, run the following command:
 ```bash
 ./andrax.sh
 ```
 
----
-
-## 🧠 Catatan
-- Pastikan koneksi internet stabil saat proses instalasi otomatis.  
-- Jalankan Termux dengan izin penyimpanan (`termux-setup-storage`) jika diperlukan.  
-- Direkomendasikan menggunakan versi Termux terbaru agar kompatibilitas lebih baik.
+![screenshot](https://raw.githubusercontent.com/Kirozaku/Andrax-Termux/main/2.jpg)
 
 ---
 
-📌 *Dikembangkan untuk mempermudah proses instalasi ANDRAX di lingkungan Termux.*
+## 🧠 Notes
+- Ensure you have a stable internet connection during the automatic installation process.  
+- Run Termux with storage permission using (`termux-setup-storage`) if required.  
+- It is recommended to use the latest version of Termux for best compatibility.
+
+---
+
+📌 *Developed to simplify the installation process of ANDRAX in Termux environments.*
